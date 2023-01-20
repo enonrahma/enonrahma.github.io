@@ -1,0 +1,302 @@
+---
+title: "PENGARUH SELISIH PENDAPATAN PERKAPITA BERDASARKAN JENIS KELAMIN TERHADAP INDEKS PEMBANGUNAN MANUSIA TAHUN 2019"
+subtitle: "Metode Penelitian Politeknik APP Jakarta"
+author: "Nur Rahma Deni"
+date: 2023-01-20
+number-sections: true
+format:
+  html: default
+  docx: default
+editor: visual
+---
+
+## Pendahuluan
+
+### Latar belakang
+
+Menurut Badan Pusat Statistik, gender adalah pembedaan peran, kedudukan, tanggung jawab, dan pembagian kerja antara laki-laki dan perempuan yang ditetapkan oleh masyarakat berdasarkan sifat perempuan dan laki-laki yang diangggap pantas menurut norma, adat istiadat, kepercayaan, atau kebiasaan masyarakat. Indonesia telah menetapkan pendekatan pembangunan yang berorientasi pada kesetaraan dan keadilan gender, meskipun diskriminasi gender masih menjadi momok dan menimbulkan perbedaan pencapaian pembangunan antara laki-laki dan perempuan. Tujuan utama dari pembangunan adalah menciptakan lingkungan yang memungkinkan bagi rakyatnya untuk menikmati umur panjang, sehat dan menjalankan kehidupan yang produktif. Namun, jika ada pengabaian aspek pada permasalahan gender, hal itu akan menghambat proses pembangunan di suatu wilayah. Pendapatan perkapita ukuran jumlah uang yang diperoleh per orang di suatu negara atau wilayah geografis. Urgensi antara pendapatan perkapita dengan kesejahteraan masyarakat yaitu jika semakin tinggi pendapatan perkapita suatu negara atau suatu daerah, maka semakin tinggi pula tingkat kesejahteraan masyarakatnya. Selain dari pendapatan perkapita, tingkat kesejahteraan masyarakat bisa dinilai dari IPM (Indeks Pembangunan Manusia), dimana IPM memiliki tujuan untuk mengukur capaian pembangunan manusia dalam memperoleh pendapatan, Kesehatan, pendidikan dan sebagainya.
+
+### Ruang lingkup
+
+Menganalisis selisih tingkat pendapatan perkapita berdasarkan jenis kelamin pada tahun 2019.
+
+### Rumusan masalah
+
+Berdasarkan latar belakang yang telah dijelaskan diatas maka dapat diambil rumusan masalah dalam penelitian ini adalahApakah pendapatan perkapita yang berbeda antara perempuan dan laki-laki di berpengaruh pada Indeks Pembangunan Manusia pada tahun 2019
+
+### Tujuan dan manfaat penelitian
+
+Penelitian ini dimaksudkan untuk memberikan informasi kepada pembaca mengenai pengaruh dari pendapatan perkapita berdasarkan jenis kelamin. Untuk memberikan hasil analisis bahwa kesenjangan antar gender masih harus menjadi topik yang semestinya kita sadari bersama. Pembaca diharapkan bisa mengambil sedikit ilmu dari penelitian ini.
+
+Sehubungan dengan dibuat makalah ini, bermanfaat bagi pembaca untuk mengetahui sejauh, sebanyak apa pendapatan perkapita di Indonesia dari tiap provinsi, berdasarkan dengan jenis kelamin laki-laki dan perempuan. Kemudian untuk mengetahui apakah dengan selisih tersebut mampu berpengaruh pada Indeks Pembangunan Manusia.
+
+### Package
+
+Ini tidak wajib ada di packages yang digunakan antara lain sebagai berikut:
+
+```{r}
+#| warning: false
+#| echo: true
+library(tidyverse)
+library(readxl)
+library(WDI) # tambahkan library lain jika diperlukan
+```
+
+## Studi pustaka
+
+### **Konsep Pendapatan**
+
+Pendapatan adalah pendapatan uang yang diterima dan diberikan kepada subjek ekonomi berdasarkan prestasi-prestasi yang diserahkan yaitu berupa pendapatan dari profesi yang dilakukan sendiri atau usaha perorangan dan pendapatan dari kekayaan. Besarnya pendapatan seseorang bergantung pada jenis pekerjaannya.
+
+Pendapatan perkapita adalah besarnya pendapatan rata-rata penduduk di suatu negara. Pendapatan  perkapita didapatkan dari hasil pembagian pendapatan nasional suatu negara  dengan jumlah penduduk negara pada suatu periode tertentu. Pendapatan perkapita dapat digunakan untuk membandingkan kesejahteraan atau standar hidup suatu negara dari tahun ke tahun. Dengan melakukan perbandingan seperti itu, kita dapat mengamati apakah kesejahteraan masyarakat pada suatu negara secara rata-rata telah meningkat. Pendapatan per kapita yang meningkat merupakan salah satutan ada bahwa rata-rata kesejahteraan penduduk telah meningkat. Pendapatan perkapita menunjukkan  pula apakah  pembangunan  yang telah  dilaksanakan  oleh pemerintah  telah  berhasil,berapa besar keberhasilan tersebut, dan akibat apa yang timbul oleh peningkatan tersebut.
+
+Jadi pendapatan per kapita merupakan salah satu cara dalam membangun perekonomian suatu negara. Pendapatan perkapita juga menjadi suatu ukuran dalam melihat keadaan kesejahteraan masyarakat di suatu negara. Pendapatan ekonomi merupakan suatu proses dalam naiknya pendapatan total dan juga pendapatan per kapita pada negara tersebut. Pendapatan per kapita juga berguna untuk melihat pembangunan di negara tersebut, selain itu juga berguna untuk melihat pendapatan rata-rata individu di negara tersebut.
+
+### **Hubungan Pendapatan Perkapita, Indeks Pembangunan Manusia, dan Pertumbuhan Ekonomi**
+
+Kegiatan pembangunan ekonomi di suatu negara bertujuan untuk meningkatkan pendapatan perkapita yang bermuara kepada perbaikan kesejahteraan masyarakat. Menurut Amalia (2007:1), "Tujuan utama pembangunan ekonomi adalah dengan menciptakan pertumbuhan Gross National Product (GNP) yang setinggi-tingginya yang diikuti dengan pemberantasann kemiskinan, perbaikan ketimpangann pendapatan, penyediaan lapangan kerja yang memadai, penyelenggaran pendidikan dengan baik, peningkatan standar kesehatan, perbaikan kondisi lingkungan hidup, pemerataan kesempatan, pemerataan kebebasan individual, dan penyegaran kehidupan budaya". Sedangkan pertumbuhan ekonomi merupakan peningkatan pendapatan per kapita masyarakat tanpa memandang perubahan dalam struktur ekonomi. Seiring dengan berjalannya waktu, Pemerintah Indonesia berusaha untuk memperbaiki kondisi ekonomi dengan cara meningkatkan pertumbuhan ekonomi.
+
+Kemudian muncul suatu paradigma tentang pembangunan ekonomi daerah yang menekankan pentingnya pembangunan ekonomi di suatu daerah. Selain itu ketersediaan indikator pembangunan ekonomi menjadi hal penting dalam perencanaan pembangunan guna mewujudkan kebijakan yang tepat sasaran. Indikator tersebut berfungsi untuk membandingkan tingkat kemajuan pembangunan antar daerah dan mengetahui corak pembangunan antar disetiap daerah. Dalam hal ini, indikator tersebut adalah IPM (Indeks Pembangunan Manusia)
+
+Pengertian indeks pembangunan manusia adalah salah satu pendekatan untuk mengukur tingkat keberhasilan pembangunan manusia". Indeks Pembangunan Manusia (IPM) atau Human Development Indeks (HDI) didapatkan darinhasil pengukuran perbandingan angka harapan hidup, angka melek huruf yang dilihat dari tingkat pendidikan terakhir yang ditamatkan dan kemampuan daya beli masyarakat untuk semua negara seluruh dunia. Tingkat indeks pembangunan manusia yang tinggi, akan mempengaruhi pertumbuhan ekonomi melalui kemampuan masyarakat untuk dapat berkontribusi lebih banyak dalam meningkatkan produktivitas dan kreatifitas mereka.
+
+Komposisi IPM berdasarkan tiga indikator yaitu kesehatan, pendidikan, dan standar hidup (daya beli) atau pendapatan. Peningkatan pendidikan seseorang sering dikaitkan dengan peningkatan pendapatan atau upah yang diperoleh. Apabila upah mencerminkan produktivitas, maka semakin banyak orang yang memiliki tingkat pendidikan tinggi maupun pengalaman pelatihan, semakin tinggi produktivitasnya dan hasilnya ekonomi nasional akan tumbuh lebih tinggi. Di samping pendidikan, kesehatan juga memiliki peranan terhadap pertambahan pendapatan.
+
+### **Hubungan antara IPG (Indeks Pembangunan Gender) dan IPM (Indeks Pembangunan Manusia)**
+
+IPG adalah indikator yang menggambarkan perbandingan (rasio) capaian antara IPM Perempuan dengan IPM laki-laki. Komponen penyusun IPG terdiri dari dimensi pendidikan, dimensi kesehatan, dan dimensi ekonomi.
+
+Indeks Pembangunan Gender (IPG) dan Indeks Pemberdayaan Gender (IDG) merupakan dua ukuran yang selalu digunakan untuk menilai keberdayaan perempuan dan kontribusi pembangunan kepada perempuan. Ukuran dalam IPG adalah sama dengan IPM yang menunjukan dua indikator dampak dalam pembangunan ini memiliki kesetaraan yang harus diwujudkan bersama.
+
+Salah satu modal dalam pembangunan yaitu sumber daya manusia. Pembangunan manusia sering kali berkaitan dengan perbedaan gender yang membahas bagaimana dalam memperoleh kesetaraan gender agar dapat meningkatkan sumber daya manusia tanpa membedakan laki-laki dan perempuan. Laki-laki dan perempuan sama penting diperhatikan agar dapat berkontribusi untuk mencapai pembangunan manusia seutuhnya.
+
+Capaian IPM hanya dapat menunjukan kesenjangan antar wilayah saja dan belum dapat menggambarkan perbedaan capaian kualitas hidup antara laki-laki dan perempuan. Dalam pembangunan manusia sering kali berkaitan dengan perbedaan gender yang membahas bagaimana dalam memperoleh kesetaraan gender agar dapat meningkatkan kualitas dari sumber daya manusia tanpa membedabedakan antara laki-laki dan perempuan (Fajriyyah dan Budiantara, 2015). Perbedaan gender dapat dilihat dari kecenderungan berperan dalam domestik atau publik. Perbedaan gender tidak menjadi masalah jika terjadi keadilaan untuk keduanya, namun ketidakadilan akan menjadikan salah satunya menjadi korban, sehingga perlu adanya kesetaraan gender agar keduanya mendapatkan kesempatan yang sama.
+
+### **Kerangka Penelitian**
+
+Kerangka penelitian adalah pemikiran dari dua variable yang kemudian disatukan sehingga membentuk pola pikir. Pada penelitian ini pendapatan perkapita menjadi variable X dan IPM menjadi variable Y. kedua variable tersebut nantinya akan di regresi sehingga akan menjawab apakah selisih pendapatan perkapita antara laki laki dan perempuan mampu mempengaruhi indeks pembangunan manusia.
+
+## Metode penelitian
+
+### Data
+
+Data penelitian ini diambil dari BPS (Badan Pusat Statistik) Indonesia, Web SIMREG (Resmi Sistem Informasi dan Data Dasar Regional), dari pendapatan perkapita seluruh provinsi di Indonesia. Kemudian diolah di Rstudio menggunakan fitur regresi plot.
+
+|     |       |     |       |     |
+|-----|-------|-----|-------|-----|
+|     | X     |     | Y     |     |
+|     |       |     |       |     |
+|     | 4705  |     | 71,19 |     |
+|     |       |     |       |     |
+|     | 6809  |     | 71,18 |     |
+|     |       |     |       |     |
+|     | 5000  |     | 71,73 |     |
+|     |       |     |       |     |
+|     | 8957  |     | 72,44 |     |
+|     |       |     |       |     |
+|     | 7999  |     | 70,65 |     |
+|     |       |     |       |     |
+|     | 5265  |     | 69,39 |     |
+|     |       |     |       |     |
+|     | 5990  |     | 70,64 |     |
+|     |       |     |       |     |
+|     | 6181  |     | 69,02 |     |
+|     |       |     |       |     |
+|     | 9975  |     | 70,67 |     |
+|     |       |     |       |     |
+|     | 7227  |     | 74,84 |     |
+|     |       |     |       |     |
+|     | 5258  |     | 80,47 |     |
+|     |       |     |       |     |
+|     | 7085  |     | 71,3  |     |
+|     |       |     |       |     |
+|     | 4927  |     | 71,12 |     |
+|     |       |     |       |     |
+|     | 3225  |     | 79,53 |     |
+|     |       |     |       |     |
+|     | 6184  |     | 70,77 |     |
+|     |       |     |       |     |
+|     | 6539  |     | 71,95 |     |
+|     |       |     |       |     |
+|     | 3022  |     | 74,77 |     |
+|     |       |     |       |     |
+|     | 4784  |     | 67,3  |     |
+|     |       |     |       |     |
+|     | 3130  |     | 64,39 |     |
+|     |       |     |       |     |
+|     | 6984  |     | 66,98 |     |
+|     |       |     |       |     |
+|     | 7726  |     | 70,42 |     |
+|     |       |     |       |     |
+|     | 8952  |     | 70,17 |     |
+|     |       |     |       |     |
+|     | 11087 |     | 75,83 |     |
+|     |       |     |       |     |
+|     | 6796  |     | 70,56 |     |
+|     |       |     |       |     |
+|     | 4648  |     | 72,2  |     |
+|     |       |     |       |     |
+|     | 5349  |     | 68,88 |     |
+|     |       |     |       |     |
+|     | 5624  |     | 70,9  |     |
+|     |       |     |       |     |
+|     | 5557  |     | 70,61 |     |
+|     |       |     |       |     |
+|     | 8589  |     | 67,71 |     |
+|     |       |     |       |     |
+|     | 6217  |     | 65,1  |     |
+|     |       |     |       |     |
+|     | 4137  |     | 68,87 |     |
+|     |       |     |       |     |
+|     | 5084  |     | 67,76 |     |
+|     |       |     |       |     |
+|     | 5447  |     | 63,74 |     |
+|     |       |     |       |     |
+|     | 6497  |     | 60,06 |     |
+|     |       |     |       |     |
+
+### Metode analisis
+
+Metode analisis yang digunakan yaitu analisis deskriptif dengan menggunakan grafik plot menggunakan analisis regresi linier. Perhitungan pendugan parameter regresi menggunakan Ordinary Least Square (OLS) agar menghasilkan koefisien regresi bersifat BLUE (best linier unbiased estimator) dengan syarat memenuhi beberapa asumsi. Menggunakan R sebagai alat batu pengolahan data, menggunakan beberapa package seperti *Base (The R Base Package), Datasets, Graphic, grDevices, Methods, stats*, dan *utils.* Setelah mendapatkan hasil regresi dan telah di plotting, grafik tersebutlah yang akan dianalisis oleh penulis.
+
+Berikut alat bantu pengolahan data, package, dan jenis model yang digunakan pada R
+
++---+---------------------------+---+
+|   | setwd('C:/github/noodle') |   |
+|   |                           |   |
+|   | library('readxl')         |   |
+|   |                           |   |
+|   | library('tidyverse')      |   |
++---+---------------------------+---+
+|   |                           |   |
++---+---------------------------+---+
+
+## Pembahasan
+
+### Pembahasan masalah
+
+Pembahasan yang disajikan hanya menggunakan data Selisih Pendapatan Perkapita antara laki laki dan perempuan dan Indeks Pembangunan Manusia pada tahun 2018. Data dibawah diambil dari data BPS (Badan Pusat Statistik).
+
+```{r}
+library(readxl)
+dat<-read_excel('DATA3.xlsx')
+head(dat)
+```
+
+|     |                      |     |                      |     |       |     |
+|-----|----------------------|-----|----------------------|-----|-------|-----|
+|     | Provinsi             |     | Pendapatan Perkapita |     | IPM   |     |
+|     |                      |     |                      |     |       |     |
+|     | ACEH                 |     | 4705                 |     | 71,19 |     |
+|     |                      |     |                      |     |       |     |
+|     | SUMATERA UTARA       |     | 6809                 |     | 71,18 |     |
+|     |                      |     |                      |     |       |     |
+|     | SUMATERA BARAT       |     | 5000                 |     | 71,73 |     |
+|     |                      |     |                      |     |       |     |
+|     | RIAU                 |     | 8957                 |     | 72,44 |     |
+|     |                      |     |                      |     |       |     |
+|     | JAMBI                |     | 7999                 |     | 70,65 |     |
+|     |                      |     |                      |     |       |     |
+|     | SUMATERA SELATAN     |     | 5265                 |     | 69,39 |     |
+|     |                      |     |                      |     |       |     |
+|     | BENGKULU             |     | 5990                 |     | 70,64 |     |
+|     |                      |     |                      |     |       |     |
+|     | LAMPUNG              |     | 6181                 |     | 69,02 |     |
+|     |                      |     |                      |     |       |     |
+|     | KEP, BANGKA BELITUNG |     | 9975                 |     | 70,67 |     |
+|     |                      |     |                      |     |       |     |
+|     | KEPULAUAN RIAU       |     | 7227                 |     | 74,84 |     |
+|     |                      |     |                      |     |       |     |
+|     | DKI JAKARTA          |     | 5258                 |     | 80,47 |     |
+|     |                      |     |                      |     |       |     |
+|     | JAWA BARAT           |     | 7085                 |     | 71,3  |     |
+|     |                      |     |                      |     |       |     |
+|     | JAWA TENGAH          |     | 4927                 |     | 71,12 |     |
+|     |                      |     |                      |     |       |     |
+|     | D I YOGYAKARTA       |     | 3225                 |     | 79,53 |     |
+|     |                      |     |                      |     |       |     |
+|     | JAWA TIMUR           |     | 6184                 |     | 70,77 |     |
+|     |                      |     |                      |     |       |     |
+|     | BANTEN               |     | 6539                 |     | 71,95 |     |
+|     |                      |     |                      |     |       |     |
+|     | BALI                 |     | 3022                 |     | 74,77 |     |
+|     |                      |     |                      |     |       |     |
+|     | NUSA TENGGARA BARAT  |     | 4784                 |     | 67,3  |     |
+|     |                      |     |                      |     |       |     |
+|     | NUSA TENGGARA TIMUR  |     | 3130                 |     | 64,39 |     |
+|     |                      |     |                      |     |       |     |
+|     | KALIMANTAN BARAT     |     | 6984                 |     | 66,98 |     |
+|     |                      |     |                      |     |       |     |
+|     | KALIMANTAN TENGAH    |     | 7726                 |     | 70,42 |     |
+|     |                      |     |                      |     |       |     |
+|     | KALIMANTAN SELATAN   |     | 8952                 |     | 70,17 |     |
+|     |                      |     |                      |     |       |     |
+|     | KALIMANTAN TIMUR     |     | 11087                |     | 75,83 |     |
+|     |                      |     |                      |     |       |     |
+|     | KALIMANTAN UTARA     |     | 6796                 |     | 70,56 |     |
+|     |                      |     |                      |     |       |     |
+|     | SULAWESI UTARA       |     | 4648                 |     | 72,2  |     |
+|     |                      |     |                      |     |       |     |
+|     | SULAWESI TENGAH      |     | 5349                 |     | 68,88 |     |
+|     |                      |     |                      |     |       |     |
+|     | SULAWESI SELATAN     |     | 5624                 |     | 70,9  |     |
+|     |                      |     |                      |     |       |     |
+|     | SULAWESI TENGGARA    |     | 5557                 |     | 70,61 |     |
+|     |                      |     |                      |     |       |     |
+|     | GORONTALO            |     | 8589                 |     | 67,71 |     |
+|     |                      |     |                      |     |       |     |
+|     | SULAWESI BARAT       |     | 6217                 |     | 65,1  |     |
+|     |                      |     |                      |     |       |     |
+|     | MALUKU               |     | 4137                 |     | 68,87 |     |
+|     |                      |     |                      |     |       |     |
+|     | MALUKU UTARA         |     | 5084                 |     | 67,76 |     |
+|     |                      |     |                      |     |       |     |
+|     | PAPUA BARAT          |     | 5447                 |     | 63,74 |     |
+|     |                      |     |                      |     |       |     |
+|     | PAPUA                |     | 6497                 |     | 60,06 |     |
+|     |                      |     |                      |     |       |     |
+
+### Analisis masalah
+
+Status Pencapaian IPM di suatu wilayah pada waktu tertentu dapat diklasifikasikan ke dalam empat kelompok. Pengelompokan ini bertujuan untuk mengategorikan wilayah-wilayah menjadi kelompok -- kelompok yang sama dalam pembangunan manusia.
+
+Kelompok kelompok tersebut yaitu:\
+Kelompok "Sangat Tinggi" IPM ≥ 80\
+Kelompok "Tinggi" 70 ≤ IPM \< 80\
+Kelompok "Sedang" 60 ≤ IPM \< 70\
+Kelompok "Rendah" IPM \< 60
+
+Hasil regresinya adalah
+
+```{r}
+#| warning: false
+#| echo: true
+reg1<-lm(X~Y,data=dat)
+summary(reg1)
+```
+
+```{r}
+plot(dat$X,dat$Y,xlab="X",ylab="Y")
+```
+
+## Kesimpulan
+
+Maka dapat disimpulkan bahwa selisih pendapatan perkapita antara laki laki dan perempuan bisa mempengaruhi nilai indeks pembangunan manusia, dengan adanya perbedaan indeks pembangunan manusia tiap daerahnya yang memiliki rentang 60-80.
+
+## **Saran**
+
+Jika Indonesia memiliki keinginan untuk terus menaikkan tingkat indeks pembangunan manusia, maka harus sebanding lurus dengan tingkat pendapatan perkapita. Selain itu, tingkat kesehatan, pendidikan, dan standar hidup (daya beli) atau pendapatan. Peningkatan pendidikan seseorang sering dikaitkan dengan peningkatan pendapatan atau upah yang diperoleh. Apabila upah mencerminkan produktivitas, maka semakin banyak orang yang memiliki tingkat pendidikan tinggi maupun pengalaman pelatihan, semakin tinggi produktivitasnya dan hasilnya ekonomi nasional akan tumbuh lebih tinggi.
+
+## Referensi
+
+Aprilianti, S., & Setiadi, Y. (2020). *Faktor-faktor Yang Memengaruhi Indeks Pembangunan Gender di Indonesia Tahun 2020*.
+
+Kertati, I. (2021). *ANALISIS INDEKS PEMBANGUNAN GENDER (IPG) DAN INDEKS PEMBERDAYAAN GENDER (IDG) KOTA SURAKARTA*. *02*(01). <http://dx.doi.org/10.56444/psgj.v2i01.1960>
+
+Sri Wahyudi, S. (2010). *PENGARUH PRODUK DOMESTIK BRUTO (PDB) DAN INDEKS PEMBANGUNAN MANUSIA (IPM) TERHADAP ANGKA KEMISKINAN DI INDONESIA*. *08*(02).
+
+Muzayyanah Dini, I., Fajriyah, & Mahdiah, Y. (n.d.). *PEMBANGUNAN MANUSIA BERBASIS GENDER 2020* (S. Angraini, Ed.).
+
+Prasetyoningrum, A. K., & U, S. S. (2018). *Analisis Pengaruh Indeks Pembangunan Manusia (IPM), Pertumbuhan Ekonomi dan Pengagguran Terhadap Kemiskinan di Indonesia*. *6*(2).
+
+BPS. (2019). *Pengeluaran per Kapita yang Disesuaikan menurut Jenis Kelamin (Ribu Rupiah/Orang/Tahun), 2018-2019*.
